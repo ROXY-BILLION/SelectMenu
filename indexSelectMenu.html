@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Menu</title>
+    <link rel="stylesheet" href="style20.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="selector">
+            <div id="selectField">
+                <p id="selectText">Select Social Media</p>
+                <img src="https://cdn-icons-png.flaticon.com/128/2985/2985150.png" id="arrowIcon">
+            </div>
+            <ul id="list" class="hide">
+                <li class="options">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2504/2504903.png">
+                    <p>Facebook</p>
+                </li>
+                <li class="options">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png">
+                    <p>Youtube</p>
+                </li>
+                <li class="options">
+                    <img src="https://cdn-icons-png.flaticon.com/128/174/174855.png">
+                    <p>Instagram</p>
+                </li>
+                <li class="options">
+                    <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png">
+                    <p>Twitter</p>
+                </li>
+                <li class="options">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3536/3536559.png">
+                    <p>Pinterest</p>
+                </li>
+                <li class="options">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png">
+                    <p>WhatsApp</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+
+       var selectField = document.getElementById("selectField");
+       var selectText = document.getElementById("selectText");
+       var options = document.getElementsByClassName("options");
+       var list = document.getElementById("list");
+       var arrowIcon = document.getElementById("arrowIcon");
+
+       selectField.onclick = function(){
+        list.classList.toggle("hide");
+        arrowIcon.classList.toggle("rotate");
+       }
+
+       for(option of options){
+        option.onclick = function(){
+            selectText.innerHTML = this.textContent;
+            list.classList.toggle("hide");
+            arrowIcon.classList.toggle("rotate");
+        }
+       }
+
+    </script>
+</body>
+</html>
